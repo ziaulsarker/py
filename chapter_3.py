@@ -63,3 +63,41 @@ print('current guests', guests)
 del guests[:]
 print("new guests", guests)
 
+
+# 3.8
+locations = ['london', "sweden", 'praguae', 'europe']
+sorted_list = sorted(locations)
+sorted_list_reversed = sorted(locations, reverse=True)
+print(locations)
+print(sorted_list)
+print(sorted_list_reversed)
+
+locations.sort();
+
+print(locations)
+
+locations.reverse()
+
+
+print(locations)
+locations.reverse()
+print(locations)
+
+locations.sort(reverse=True)
+
+
+
+# 3.9
+print(f"{len(x_guests)} is Not coming to the party")
+
+# 3.10
+list_of_songs = ["aint no sunshine", "loose yourself", "goldie"]
+
+print(sorted(list_of_songs))
+
+reverse_list_of_songs = reversed(list_of_songs)
+
+for song in reverse_list_of_songs :
+  print(song)
+
+
