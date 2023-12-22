@@ -135,6 +135,19 @@ for user in new_useres :
     print(f'sorry {user} is already in use')
   else :
     print(f"ohh you good {user} mother fucker")
+
+
+# 5.11
+nums = [1,2,3,4,5,6,7,8,9]
+ordanialExceptions = [1,2,3]
+
+for num in nums : 
+  if num == 1 :
+    print(f'{num}st')
+  elif num == 2 or num == 3:
+    print(f'{num}nd')
+  else : print(f'{num}th')
+
   
 
 
