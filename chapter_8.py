@@ -31,18 +31,25 @@ describe_city(city='New York')
 describe_city(None)
 
 # 8.7
-def make_album(name, album, num_somgs=None) :
-  if not name or not album : return
+def make_album(name:str, album:str, num_somgs:int=None) :
+  my_album = {}
 
-  artist = {}
+  if not name or not album : return my_album
 
-  artist[name] = name
-  artist[album] = album
+  my_album[name] = name.title()
+  my_album[album] = album
 
   if num_somgs : 
-    artist[num_somgs] = num_somgs
+    my_album['num_somgs'] = num_somgs
 
-  return artist
+  return my_album
+
+
+album_1 = make_album('mike jones', 'all on me', 10)
+
+print(album_1)
+
+
 
 
 
