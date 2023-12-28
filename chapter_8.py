@@ -29,3 +29,22 @@ def describe_city(city, country='USA') :
 describe_city('New York', "USA")
 describe_city(city='New York')
 describe_city(None)
+
+# 8.7
+def make_album(name, album, num_somgs=None) :
+  if not name or not album : return
+
+  artist = {}
+
+  artist[name] = name
+  artist[album] = album
+
+  if num_somgs : 
+    artist[num_somgs] = num_somgs
+
+  return artist
+
+
+
+
+
