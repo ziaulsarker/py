@@ -36,8 +36,8 @@ def make_album(name:str, album:str, num_somgs:int=None) :
 
   if not name or not album : return my_album
 
-  my_album[name] = name.title()
-  my_album[album] = album
+  my_album['name'] = name.title()
+  my_album['album'] = album
 
   if num_somgs : 
     my_album['num_somgs'] = num_somgs
@@ -46,8 +46,11 @@ def make_album(name:str, album:str, num_somgs:int=None) :
 
 
 album_1 = make_album('mike jones', 'all on me', 10)
+album_2 = make_album('50 cent', 'get rich or die trying')
 
 print(album_1)
+
+print(album_2)
 
 
 
