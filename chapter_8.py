@@ -145,9 +145,3 @@ def build_car(model, make, **kwargs) :
   return kwargs
 
 print(build_car('accord', 2023, color='blue', miles=35_000))
-
-
-
-
-  
-
