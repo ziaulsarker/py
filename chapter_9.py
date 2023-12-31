@@ -1,3 +1,5 @@
+from ev import Ev
+
 """DOCS MOTHER FUCKERS"""
 
 # 9.1 
@@ -101,13 +103,35 @@ me.reset_login_appemt()
 print(me.login_appemt)
 
 
+# 9.7 and 9.8
+class Privalages : 
+  def __init__(self) :
+    self.privalages = ['can add post', 'can edit post', 'can delete post']
+  
+  def show_privalages(self) :
+    print(*self.privalages)
+
+class Admin(User) :
+  def __init__(self, fullname='') :
+    fname, lname = fullname.split()
+    print(fname, lname)
+    super().__init__(fname, lname)
+
+    self.privalages = Privalages()
+  
+ 
+i_am_admin = Admin('ziaul sarker')
+
+i_am_admin.privalages.show_privalages()
+
+
 
 # 9.6 
 
 class IceCreamStand(Resturant) :
   def __init__(self, resturant_name: str, cusine: str) :
     self.flavors = ['vanalia', 'strawberry']
-    Resturant.__init__(self, resturant_name, cusine)
+    super().__init__(resturant_name, cusine)
 
   def available_flavore(self):
     print(*self.flavors)
@@ -118,6 +142,12 @@ ice_stand = IceCreamStand('AZ Ice cream', 'desert')
 ice_stand.available_flavore()
 
 ice_stand.describe_resturant()
+
+
+tesla = Ev({'make': 'Tesla', 'model': 'S class', 'year': 2024})
+print(tesla.battery.size)
+tesla.battery.get_range()
+
 
 
 
