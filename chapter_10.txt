@@ -1,0 +1,9 @@
+python 101 
+so far i learn about 
+basic data types (lists, tuples, dictionaries, booleans, floats, ints, strings, list-comprehension), 
+classes (initializing classes, adding meathods, removing methods, inheriting from parent/super classes, extending from multiple classes), 
+functions (what are arguments and parameters, positional arguments, keword arguments, default parameters, arbitrary arguments), 
+control flows (if/elif/else, while/for loops), 
+error handling (try/expect/else), 
+user input(input fn), 
+working with the file system (reading and writing)
