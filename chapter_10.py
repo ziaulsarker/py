@@ -24,10 +24,23 @@ print(file_text_content)
 
 # 10.4 
 
+# one way
+guest_name = input('Enter guest name : ')
+guests_registry = open('chapter_10_guests.txt', '+a')
+guests_registry.writelines(guest_name + '\n')
+guests_registry.close()
+
+# another way
 guest_name = input('Enter guest name : ')
 guests_registry = Path('chapter_10_guests.txt')
-guests_registry.write_text(guest_name + '\n')
-# guests_registry.writelines()
+guests_registry = guests_registry.open(mode='+a')
+guests_registry.writelines(guest_name + '\n')
+guests_registry.close()
+
+# another way -> much cleaner
+with Path('chapter_10_guests.txt').open(mode='+a') as f : 
+  f.writelines(guest_name + '\n')
+
 
 
 
