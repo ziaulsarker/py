@@ -4,25 +4,28 @@
 from contextlib import contextmanager
 from time import time, sleep, gmtime
 
-# @contextmanager
-# def ex_timer_decorator(cb, *args) :
-#   start_time = time()
-#   end_time = start_time
-#   try :
-#     yield 
-#   finally:
-#     pass
+@contextmanager
+def ex_timer_decorator(cb, *args) :
+  start_time = gmtime()
+  print(f'start_time -> {start_time}')
+  try :
+    cb(*args)
+    sleep(2)
+    end_time = gmtime()
+    print(f'end_time -> {end_time} \n')
+    yield  ex_timer_decorator
+  finally:
+    pass
+ 
 
 
-# # def console():
-# #   print('hello python')
    
 
-# # with ex_timer_decorator(print, 'hello') as t :
-# #   print(t)
-# #   with ex_timer_decorator(print, 'world') as z :
-# #     print(f'{t} {z}')
-# # print('done!!')
+with ex_timer_decorator(print, 'hello') as t :
+  with t(print, 'world') :
+    with t(print, 'its me pythons') :
+      pass
+print('done!! \n')
 
 
 class Ex_timer(): 
