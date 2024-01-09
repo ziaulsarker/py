@@ -40,6 +40,7 @@ class Ex_timer():
     return self
   
   def __exit__(self, exc_type, exc_value, exc_trackback) :
+    print('E -> ' ,exc_type, exc_value, exc_trackback)
     self.time = time()
   
   def timer(self):
@@ -54,6 +55,20 @@ with Ex_timer(time()) as t :
       t.timer()
 
     
+
+# name mangling 
+      
+_MY_CLASS__test = 'testing'
+
+class MY_CLASS :
+  def __init__(self) -> None:
+    pass
+  def run_test(self) :
+    return __test
+  
+
+
+print(MY_CLASS().run_test())
 
   
 
