@@ -1,3 +1,5 @@
+from time import time, localtime, time_ns
+
 def say_loud(fn) :
 
   def wrapper() :
@@ -9,7 +11,12 @@ def say_loud(fn) :
   
 def looger(fn) :
   def wrapper(*args, **kwargs) :
-    return fn(*args, **kwargs)
+    starting = time_ns()
+    print(f'starting {starting}')
+    x = fn(*args, **kwargs)
+    end = time_ns();
+    print(f'finished took {end - starting}')
+    return x
   return wrapper
 
 
