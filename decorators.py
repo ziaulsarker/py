@@ -39,3 +39,38 @@ def say(name, vol='loud') :
 
 print(say(name='world', vol='loud'))
 
+
+print(10 * float(8.9))
+
+
+
+
+def lowercase_decorator(fn) :
+
+  def decorated_callable() :
+    result_of_callable = fn()
+    return result_of_callable.lower()
+  
+  return decorated_callable
+
+# the original callable
+def callable_to_deforate() :
+  return 'Hello WORLD!'
+
+# the callable that will "DECORATED"
+@lowercase_decorator
+def decorated_callable() :
+  return 'Hello WORLD!'
+
+
+originale_callable = decorated_callable
+decorated_original_callable = lowercase_decorator(callable_to_deforate)
+
+# invoke the callables 
+# the actully function result with out it being mutated
+print(originale_callable()) # 'Hello WORLD!'
+
+# the decorated result 
+print(decorated_original_callable()) # 'hello world!'
+
+print('Calling')
